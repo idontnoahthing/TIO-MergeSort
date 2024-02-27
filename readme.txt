@@ -26,7 +26,9 @@ if lastindex - firstIndex is less than 2, return.
 4a) Merging together the two sorted array region halves by copying each array half into a temporary arrays. After the two recursive calls, each array half region should be sorted.  You must merge these two half regions.  This step is not trivial.  Merging two half regions together cannot be done in-place, or in other words, must utilize separate temporary array space.  So this 4a step becomes a preparation step. The prep work creates two temporary arrays (left half and right half), then copies data from the existing array into these two temporary arrays. Now that the data is prepped in two temp arrays, 4b can merge them back into the original array. 
 
 Compute the size of your left array half into a variable called leftHalfSize.  Use your middleIndex and firstIndex to compute this size.
+
 Compute the size of your right array half into a variable called rightHalfSize.  Use your lastIndex and middleIndex to compute this size.
+
 Create a temporary array to store the left array half.  As this assignment uses templates and dynamic arrays, and these concepts are still somewhat new to most students, here is the line of code you will use:   T* leftArray = new T[leftHalfSize];
 
 Create a temporary array to store the right array half.  Use a similar line of code as the prior bullet point.

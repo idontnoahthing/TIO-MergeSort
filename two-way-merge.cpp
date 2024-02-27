@@ -90,23 +90,33 @@ class MergeSort : public BaseSort <T> {
 			int middleIndex;
 			int size = lastIndex - firstIndex;
 
+			int leftHalfSize, rightHalfSize;
+
 
 			//base case (determine if recursion should stop)
 				if (size < 2){
 					return;
 				}
 			//where to split the array (even and odd numbered)
-				if (size % 2 == 0){
-					middleIndex = size / 2;
-				}
-				else {
-					middleIndex = floor(size / 2);
-				}
-
+				middleIndex = size / 2;
 			//call runSort() on each half to break down further
-
-			//merge together the sorted array region halves
+				runSort(firstIndex, middleIndex);
+				runSort(middleIndex, lastIndex);
+			//merge together the sorted array region halves				
+				//compute sizes
+				leftHalfSize = middleIndex - firstIndex;
+				rightHalfSize = lastIndex - middleIndex;
+				//create temps
+				T* leftArray = new T[leftHalfSize];
+				T* rightArray = new T[rightHalfSize];
 				//copy each into a temp
+				for (int i = 0; i < leftHalfSize; i++){
+					leftArray[i] = this->arr[firstIndex + i];
+				}
+				for (int i = middleIndex; i < lastIndex; i++){
+					rightArray[i] = this->arr[middleIndex + i];
+				}
+
 				//sort each back into the original array
 
 			
