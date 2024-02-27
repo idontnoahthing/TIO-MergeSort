@@ -74,6 +74,8 @@ void BaseSort<T>::verifySort() const {
 }
 
 
+// YOU ARE WORKING RIGHT HERE
+
 template <typename T>
 class MergeSort : public BaseSort <T> {
 	public:
