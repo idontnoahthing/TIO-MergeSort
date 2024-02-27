@@ -79,8 +79,41 @@ void BaseSort<T>::verifySort() const {
 template <typename T>
 class MergeSort : public BaseSort <T> {
 	public:
+		MergeSort(const unsigned int capacity) : BaseSort<T>("Two-Way Merge", capacity) {}
+		void runSort(0, this -> capacity);
+
 	private:
+
+		template <typename T>
+		void MergeSort<T>::runSort(const unsigned int firstIndex, const unsigned int lastIndex): {
+			//variables needed
+			int middleIndex;
+			int size = lastIndex - firstIndex;
+
+
+			//base case (determine if recursion should stop)
+				if (size < 2){
+					return;
+				}
+			//where to split the array (even and odd numbered)
+				if (size % 2 == 0){
+					middleIndex = size / 2;
+				}
+				else {
+					middleIndex = floor(size / 2);
+				}
+
+			//call runSort() on each half to break down further
+
+			//merge together the sorted array region halves
+				//copy each into a temp
+				//sort each back into the original array
+
+			
+		}//MergeSort
 };
+
+
 
 
 
